@@ -1,31 +1,51 @@
 var colors = generateRandomColor(6);
 
 var squares = document.querySelectorAll(".square");
-var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorDisplay");
 var messageDisplay = document.querySelector("#message");
+var header = document.querySelector("#header");
+var newColorB = document.querySelector("button");
+var resetButton = document.querySelector("reset");
 
-colorDisplay.textContent = pickedColor;
 
-for( var i = 0; i < squares.length; i++){
-  // add initial colors to squares
-	squares[i].style.backgroundColor = colors[i];
 
-  //add event listeners to squares
-  squares[i].addEventListener("click", function(){
-    //grab color of clicked square
-    var clickedColor = this.style.backgroundColor;
-    //compare color to picked square
-    if (clickedColor === pickedColor) {
-        document.body.style.backgroundColor = pickedColor;
-        messageDisplay.textContent = "Correct!";
-        changeColor(clickedColor);
-    } else {
-      this.style.backgroundColor = "#232323";
-      messageDisplay.textContent = "Try Again";
-    }
-  });
-};
+start();
+
+function start(){
+  var pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+
+  for( var i = 0; i < squares.length; i++){
+    // add initial colors to squares
+    squares[i].style.backgroundColor = colors[i];
+
+    //add event listeners to squares
+    squares[i].addEventListener("click", function(){
+      //grab color of clicked square
+      var clickedColor = this.style.backgroundColor;
+      //compare color to picked square
+      if (clickedColor === pickedColor) {
+          header.style.backgroundColor = pickedColor;
+          messageDisplay.textContent = "Correct!";
+          changeColor(clickedColor);
+          //change content of the text in reset button to Play again?
+          resetButton.textContent = "Play again?"
+      } else {
+        this.style.backgroundColor = "#232323";
+        messageDisplay.textContent = "Try Again";
+      }
+    });
+  };
+}
+
+newColorB.addEventListener("click", function() {
+  //if easy
+  // colors = generateRandomColor(3);
+  // start();
+  //if hard
+  colors = generateRandomColor(6);
+  start();
+});
 
 function changeColor(color){
   //loop through all squares
@@ -64,7 +84,7 @@ function creatColor(){
   colorStr = colorStr.substring(0,colorStr.length-2) + ")";
   return colorStr;
 
-//instead of we could like that 
+//instead of we could like that
 
   // //pick red from 0 to 255
   // var r = Math.floor(Math.random() * 256);

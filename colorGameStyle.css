@@ -1,4 +1,6 @@
 body{
+  margin: 0;
+  padding: 0;
   background-color: #232323;
 }
 .square{
@@ -14,7 +16,58 @@ body{
   width: 600px;
 }
 
-h1,
-span {
+h1{
+  margin: 0;
+  padding: 0;
   color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+button{
+  border: none;
+  padding: 6.5px;
+  color: #4176AE;
+  outline: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+button:hover,
+button:active{
+  background-color: #4176AE;
+  color: white;
+  border: 0px solid #4176AE;
+}
+
+#message{
+  
+}
+
+#colorDisplay {
+  color: white;
+  font-size: 60px;
+}
+
+#header{
+  background: #4176AE;
+  height: 150px;
+  width: 100%;
+  text-align: center;
+}
+
+#stripe{
+  background: white;
+  height: 30px;
+  text-align: center;
+}
+#reset{
+  float: left;
+  margin-left: 40px;
+}
+#easy{
+  float: right;
+}
+
+#hard{
+  float: right;
+  margin-right: 40px;
 }
