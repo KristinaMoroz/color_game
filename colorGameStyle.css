@@ -77,3 +77,6 @@ button:active{
   background-color: #4176AE;
   color: white;
 }
+.hide{
+  display: none;
+}

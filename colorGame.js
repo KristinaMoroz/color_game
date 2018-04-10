@@ -1,3 +1,15 @@
+// var game = {
+//
+//   game.init = function(){
+//     setupModeButtons();
+//     setupSquares();
+//     reset();
+//   }
+//   //add all functions and veariables
+//
+//   game.init();
+// }
+
 var numSquares = 6;
 var colors = [];
 var pickedColor;
@@ -11,9 +23,9 @@ var modeButtons = document.querySelectorAll(".mode");
 init();
 
 function init(){
-  //mode buttons event listeners
   setupModeButtons();
   setupSquares();
+  reset();
 }
 
 function setupModeButtons(){
@@ -59,10 +71,10 @@ function reset(){
   //change colors on the page
   for (var i = 0; i < squares.length; i++) {
     if (colors[i]) {
-      squares[i].style.display = "block";
+      squares[i].classList.remove("hide")
       squares[i].style.backgroundColor = colors[i];
     } else {
-      squares[i].style.display = "none";
+      squares[i].classList.add("hide");
     }
   }
   header.style.backgroundColor = "#4176AE";
