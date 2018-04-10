@@ -72,24 +72,8 @@ button:active{
   height: 30px;
   text-align: center;
 }
-/*#resetBtn{
-  float: left;
-  margin-left: 40px;
-}
-#easyBtn{
-  float: right;
-  margin-right: 5px;
-}
-
-#hardBtn{
-  float: right;
-  margin-right: 100px;
-}*/
 
 .selected{
   background-color: #4176AE;
   color: white;
-}
-.hide{
-  display: none;
 }
