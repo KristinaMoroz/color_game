@@ -35,7 +35,6 @@ button{
   text-transform: uppercase;
   height: 100%;
   letter-spacing: 1px;
-  padding: 6px 0;
   color: #4176AE;
   font-weight: 700;
   font-size: inherit;
@@ -53,6 +52,8 @@ button:active{
 #message{
   display: inline-block;
   width: 25%;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 #colorDisplay {
